@@ -6,16 +6,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './i18n';
 
-import Referrals from 'Components/Referrals/Referrals';
-import Header from 'Components/Header/Header';
-import Footer from 'Components/Footer/Footer';
-import NotFound from 'Components/NotFound/NotFound';
-import FAQ from 'Components/FAQ/FAQ';
-
 import Home from 'Components/Home/Home';
-import Order from 'Components/Order/Order';
-import TermsConditions from 'Components/TermsConditions/TermsConditions';
-import Privacy from 'Components/Privacy/Privacy';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -41,19 +32,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
-        <Referrals />
-        <Header />
-
         <Switch>
-          <Route exact path="/terms-and-conditions" component={TermsConditions} />
-          <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
-          <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route component={NotFound} />
         </Switch>
-
-        <Footer />
       </div>
     </BrowserRouter>
   </Provider>,

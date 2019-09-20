@@ -4,7 +4,6 @@ import { I18n, Trans } from 'react-i18next';
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
 import OrderBookWidget from './OrderBookWidget/OrderBookWidget';
 import OrderBookDisabled from './OrderBookWidget/OrderBookDisabled';
-import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 import Config from 'Config'; 
 
@@ -50,16 +49,6 @@ class Hero extends Component {
 
             <div className="container">
               <div className="row">
-                <div className="col-xs-12">
-                  <div className={styles.brand}>
-                    <h1>{t('hero.1')}</h1>
-                    <Trans i18nKey="hero.2">
-                      <h2>
-                        Simple. <span className="text-green">Secure</span>. Transparent.
-                      </h2>
-                    </Trans>
-                  </div>
-                </div>
 
                 <div className={styles.widget}>
                   { this.props.orderMode === 'INSTANT'
@@ -71,7 +60,6 @@ class Hero extends Component {
               </div>
             </div>
 
-            <CoinPrices />
           </div>
         )}
       </I18n>
