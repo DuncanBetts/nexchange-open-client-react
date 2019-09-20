@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './i18n';
 
 import Home from 'Components/Home/Home';
+import Order from 'Components/Order/Order';
+import TermsConditions from 'Components/TermsConditions/TermsConditions';
+import Privacy from 'Components/Privacy/Privacy';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -33,7 +36,12 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
+          <Route exact path="/terms-and-conditions" component={TermsConditions} />
+          <Route exact path="/privacy" component={Privacy} />
+
+          <Route exact path="/" render={props => <Home {...props} store={store} />} />
+
+          <Route exact path="/order/:orderRef" component={Order} />
         </Switch>
       </div>
     </BrowserRouter>
