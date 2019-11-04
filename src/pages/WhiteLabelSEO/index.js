@@ -1,6 +1,5 @@
 import React from 'react'
 import { I18n } from 'react-i18next'
-import styled from '@emotion/styled'
 
 import VideoCard from 'Components/WhiteLabel/VideoCard/'
 import KeyFeatures from 'Components/WhiteLabel/KeyFeatures/'
