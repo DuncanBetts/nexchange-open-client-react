@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
+import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 import { I18n } from 'react-i18next'
 
 
@@ -12,7 +13,7 @@ export default function MajorCard() {
       {t => (
         <Fragment>
           <Col md={12}>
-            <h2>{ t('majorcard.title') }</h2>
+            <SectionHeading>{ t('majorcard.title') }</SectionHeading>
           </Col>
           <Col md={6}>
             { t('majorcard.text') }

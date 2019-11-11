@@ -1,6 +1,7 @@
 import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
+import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 
 
 const PriceTable = (props) => {
@@ -14,12 +15,12 @@ const PriceTable = (props) => {
     <I18n ns="translations">
       {t => (
     <>
-      <h2>Pricing</h2>
+      <SectionHeading>Pricing</SectionHeading>
       <StyledTable>
         <thead>
           <tr>
             <th className='plans'>Plans</th>
-            {plans.map(({name}) => <th key={`plan-${name}`} className={`p p-${name}`}>{t(`whitelabel.plans.${name}`)}</th>)}
+            { plans.map(( {name} ) => <th key={ `plan-${name}` } className={ `p p-${name}` }>{t( `whitelabel.plans.${name}` )}</th>) }
           </tr>
         </thead>
         <tbody>

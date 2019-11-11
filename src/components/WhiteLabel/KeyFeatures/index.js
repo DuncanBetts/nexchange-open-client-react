@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
-import styles from './KeyFeatures.scss'
+import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 import { I18n } from 'react-i18next'
 
 import FeatureItem from './FeatureItem'
-
 
 export default function KeyFeatures() {
   return (
@@ -12,7 +11,7 @@ export default function KeyFeatures() {
       {t => (
         <Fragment>
           <Col md={12}>
-            <h2>{ t('keyfeatures.title') }</h2>
+            <SectionHeading>{ t('keyfeatures.title') }</SectionHeading>
           </Col>
           <Col md={4}>
             < FeatureItem name={ t('keyfeatures.feature1name') } description={ t('keyfeatures.feature1desc') } />

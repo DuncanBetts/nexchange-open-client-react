@@ -4,6 +4,8 @@ import Fuse from 'fuse.js';
 import debounce from 'Utils/debounce';
 import i18n from 'Src/i18n';
 import { Col } from 'reactstrap';
+import { SectionSubHeading, SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
+
 import { Generic, GenericCollection, JSONLD } from 'react-structured-data';
 
 import QuestionAnswer from './QuestionAnswer';
@@ -128,8 +130,8 @@ class FAQ extends Component {
           <Fragment>
             <div className="col-xs-12">
               <div className={styles.brand}>
-                <h1>{t('faq.heading1')}</h1>
-                <h2>{t('faq.heading2')}</h2>
+                <SectionHeading>{t('faq.heading1')}</SectionHeading>
+                <SectionSubHeading>{t('faq.heading2')}</SectionSubHeading>
               </div>
             </div>   
             <div className={`col-xs-12 ${styles.faqs}`}>
