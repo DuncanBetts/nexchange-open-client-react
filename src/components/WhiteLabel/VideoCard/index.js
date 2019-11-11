@@ -38,7 +38,7 @@ const IframeContainer = styled.div`
   }
 `
 
-const Iframe = styled.iframe`
+const Iframe = styled(YouTube)`
   position: absolute;
   top: 2rem;
   left: 0;
@@ -138,7 +138,7 @@ export default function VideoCard() {
               <StyledButton onClick={ onContactUs }>{ t('videocard.contactus') }</StyledButton>
             </Buttons>
             <IframeContainer>
-              <YouTube videoId="7ujmzb3HzCA" opt={youtubeOptions} />
+              <Iframe videoId="7ujmzb3HzCA" opt={youtubeOptions} />
             </IframeContainer>
           </GridContainer>
           <Support show={ showSupportModal } onClose={ () => setShowSupportModal(false) } />
