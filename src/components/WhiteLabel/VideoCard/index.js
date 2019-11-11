@@ -10,11 +10,15 @@ import YouTube from 'react-youtube'
 const PageTitle = styled.h1`
   grid-column: 1;
   grid-row: 1;
-  font-size: 3.25rem;
+  font-size: 3.5rem;
   text-align: center;
   @media(min-width: 768px) {
     font-size: 4rem;
     text-align: inherit;
+  }
+  @media(min-width: 1024px) {
+    font-size: 5rem;
+    grid-column: 2;
   }
   @media(min-width: 1536px) {
     font-size: 5rem;
@@ -31,10 +35,15 @@ const IframeContainer = styled.div`
   padding-top: 56.25%;
   overflow: hidden;
   max-width: 100%;
+  transform: translateX(5px);
   @media(min-width: 768px) {
+    transform: translate(-10px, 10px);
     grid-column: 2;
     grid-row: 1 / 3;
     align-self: start;
+  }
+  @media(min-width: 1024px) {
+    grid-column: 3;
   }
 `
 
@@ -63,7 +72,7 @@ const Wrapper = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-rows: 150px 200px 150px;
+  grid-template-rows: 220px 200px 150px;
   grid-template-columns: 360px;
   grid-gap: .5rem;
   @media(min-width: 768px) {
@@ -71,7 +80,8 @@ const GridContainer = styled.div`
     grid-template-columns: 348px 398px;;
   }
   @media(min-width: 1024px) {
-    grid-template-columns: 15px minmax(497px, 625px) minmax(497px, 625px) 15px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 15px 1fr 1fr 15px;
   }
 `
 
@@ -106,6 +116,9 @@ const Buttons = styled.div`
     grid-row: 2;
     justify-self: left;
   }
+  @media(min-width: 1024px) {
+    grid-column: 2;
+  }
 `
 
 const StyledButton = styled(Button)`
@@ -138,7 +151,7 @@ export default function VideoCard() {
               <StyledButton onClick={ onContactUs }>{ t('videocard.contactus') }</StyledButton>
             </Buttons>
             <IframeContainer>
-              <Iframe videoId="7ujmzb3HzCA" opt={youtubeOptions} />
+              <Iframe videoId="7ujmzb3HzCA" opt={ youtubeOptions } />
             </IframeContainer>
           </GridContainer>
           <Support show={ showSupportModal } onClose={ () => setShowSupportModal(false) } />

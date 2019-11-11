@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { I18n } from 'react-i18next'
 import SupportedAsset from './SupportedAsset'
 import { Col } from 'reactstrap'
+import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 
 const coins = [
   { src: 'img/coins/BCH.png', name: 'BCH' },
@@ -31,7 +32,7 @@ export default function SupportedAssets() {
       {t => (
         <Fragment>
           <Col md={12}>
-            <h2>{t('supportedassets.title')}</h2>
+            <SectionHeading>{t('supportedassets.title')}</SectionHeading>
           </Col>
             {coins.map((coin, index) => <SupportedAsset coin={coin} key={`coin-${index}`} />)}
         </Fragment>

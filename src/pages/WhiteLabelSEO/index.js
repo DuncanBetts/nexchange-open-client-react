@@ -1,6 +1,7 @@
 import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
+import { Container } from 'reactstrap'
 
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
@@ -25,7 +26,7 @@ const WhiteLabelSEO = ({data, ...props}) => {
       {t => (
         <div className={ styles.whitelabel }>
           <VideoCard />
-          <StyledContainer className='container'>
+          <Container>
             <section className='row'><KeyFeatures features={features} /></section>
             <section className='row'><MajorCard /></section>
             <section className='row'><SupportedAssets /></section>
@@ -34,19 +35,12 @@ const WhiteLabelSEO = ({data, ...props}) => {
             <section className='row'><MinorCard topic={ t('minorcard.topic3title') } text={ t('minorcard.topic3text') } /></section>
             <section className='row'><PriceTable plans={plans} /></section>
             <section className='row'><FAQ items={faq} /></section>
-          </StyledContainer>
+          </Container>
         </div>
       )}
     </I18n>
   )
 }
-
-const StyledContainer = styled.div`
-  > .row:not(:first-of-type) {
-    margin-top: 5rem;
-  }
-`
-
 
 const plans = [
   {

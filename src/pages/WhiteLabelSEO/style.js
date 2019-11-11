@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
 
-
 const SectionHeading = styled.h2`
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -10,6 +9,7 @@ const SectionHeading = styled.h2`
   font-family: 'Clan Offc Pro Book';
   @media(min-width: 750px) {
     font-size: 3.5rem;
+    color: #fff;
   }
   @media(min-width: 1536px) {
     font-size: 4rem;
@@ -21,12 +21,12 @@ const SectionHeading = styled.h2`
 
 const SectionSubHeading = styled.h3`
   padding-top: 1rem;
-  padding-bottom: .5rem;
   font-weight: 400;
   font-size: 2.5rem;
   font-family: 'Clan Offc Pro Book';
   @media(min-width: 750px) {
     font-size: 3rem;
+    color: #fff;
   }
   @media(min-width: 1536px) {
     font-size: 2rem;

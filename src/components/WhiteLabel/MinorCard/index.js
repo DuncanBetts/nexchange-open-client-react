@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
 import styles from './MinorCard.scss'
+import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 
 
 export default function MinorCard({ topic , text }) {
@@ -13,7 +14,7 @@ export default function MinorCard({ topic , text }) {
   return (
     <Fragment>
       <Col md={12}>
-        <h2>{ topic }</h2>
+        <SectionHeading>{ topic }</SectionHeading>
       </Col>
       <Col md={6}>
         { text }
