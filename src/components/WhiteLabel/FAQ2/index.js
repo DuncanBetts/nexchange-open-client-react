@@ -11,11 +11,14 @@ import { Generic, GenericCollection, JSONLD } from 'react-structured-data';
 import QuestionAnswer from './QuestionAnswer';
 import Support from 'Components/Header/Support/Support';
 import styles from './FAQ.scss';
-
+import { markdown } from 'markdown'
 
 const FAQ_COUNT = 14;
 
 class FAQ extends Component {
+  showSearch = true
+  questionsRoot = 'whitelabel.faq.questions'
+  answerRoot = 'whitelabel.faq.answers'
   constructor(props) {
     super(props)
 
@@ -120,8 +123,27 @@ class FAQ extends Component {
     'why-whitelabel'
   ]
 
-  render() {
+  makeSEOQNA = (questions, t) => {
+    const seoqna = {
 
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ...questions.map((q) => ({
+          "@type": "Question",
+          "name": t(`whitelabel.faq.questions.${q}`),
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": markdown.toHTML(t(`whitelabel.faq.answers.${q}`))
+          }
+        }))
+      ]
+    }
+
+    return seoqna
+  }
+
+  render() {
 
 
     return (
@@ -135,23 +157,25 @@ class FAQ extends Component {
               </div>
             </div>   
             <div className={`col-xs-12 ${styles.faqs}`}>
-              <form className="form-group" onSubmit={this.handleSubmit}>
-                <div className={`${styles.input}`}>
-                  <i className={`fas fa-search`}></i>
-                  <input
-                    type="text"
-                    className={`form-control`}
-                    id="faq-search"
-                    value={this.state.searchText}
-                    onChange={event => this.handleChange(event)}
-                    placeholder={t('faq.inputplaceholder')}
-                  />
-                </div>
+              {this.showSearch && (
+                <form className="form-group" onSubmit={this.handleSubmit}>
+                  <div className={`${styles.input}`}>
+                    <i className={`fas fa-search`}></i>
+                    <input
+                      type="text"
+                      className={`form-control`}
+                      id="faq-search"
+                      value={this.state.searchText}
+                      onChange={event => this.handleChange(event)}
+                      placeholder={t('faq.inputplaceholder')}
+                    />
+                  </div>
                 </form>
+              )}
               
               {_.isEmpty(this.state.filteredQuestionsIds) 
-              ? <div className={styles.notfound}><h3>{t('whitelabelfaq.notfound')}</h3>
-                  <a onClick={() => this.openSupportModal(this.state.searchText)}>{t('whitelabelfaq.openticket')}</a>
+              ? <div className={styles.notfound}><h3>{t('whitelabel.faq.notfound')}</h3>
+                  <a onClick={() => this.openSupportModal(this.state.searchText)}>{t('whitelabel.faq.openticket')}</a>
                 </div>
               : <div id='faq.list' className={styles.list}>
                 {this.questions.map((qid, index) => this.showQuestion(index + 1) && (
@@ -167,6 +191,9 @@ class FAQ extends Component {
               }
               </div>
               <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
+              <script type="application/ld+json">{JSON.stringify(this.makeSEOQNA(this.questions, t))}</script>
+
+              <p><small>Created on: Nov 2nd 2019 - Last Update: Nov 3rd 2019</small></p>
             </Fragment>
         )}
       </I18n>

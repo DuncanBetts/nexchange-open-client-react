@@ -11,6 +11,7 @@ import Header from 'Components/Header/Header';
 import Footer from 'Components/FooterNext/Footer';
 import NotFound from 'Components/NotFound/NotFound';
 import FAQ from 'Components/FAQ/FAQ';
+import Pair from 'Components/Pair/Pair';
 
 import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
@@ -24,6 +25,8 @@ import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
 
 import reducers from './reducers';
+
+import GraphCMSProvider from './graphcms'
 import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
@@ -43,29 +46,35 @@ require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <div>
-        <Referrals />
-        <Header />
 
-        <Switch>
-          <Route exact path="/terms-and-conditions" component={TermsConditions} />
-          <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/" render={props => <Home {...props} store={store} />} />
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} /> 
-          <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route exact path="/not-found" component={NotFound} />
-          <Route exact path="/whitelabel/" component={WhiteLabelSEO} />
-          <Route component={NotFoundRedirect} />
-        </Switch>
+ReactDOM.render((
+  <GraphCMSProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <Referrals />
+          <Header />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
-  </Provider>,
+          <Switch>
+            <Route exact path="/terms-and-conditions" component={TermsConditions} />
+            <Route exact path="/privacy" component={Privacy} />
+            <Route exact path="/order/:orderRef" component={Order} />
+            <Route exact path="/"
+              render={props =>  <Home {...props} store={store} />}
+            />
+            <Route exact path="/whitelabel/" component={WhiteLabelSEO} />
+            <Route exact path="/faqs/:id?" component={FAQ} />
+            <Route exact path="/convert/:base-to-:quote"
+              render={props =>  <Pair {...props} store={store} />} />
+            <Route exact path="/not-found" component={NotFound} />
+            <Route component={NotFoundRedirect} />
+          </Switch>
+
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </Provider>
+  </GraphCMSProvider>
+  ),
   document.getElementById('root')
 );

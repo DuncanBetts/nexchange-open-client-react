@@ -1,4 +1,11 @@
 {
+  "PerExchangePairHEAD": {
+    "title": "Instant Exchange Sell {{depositCoinFullName}} ({{depositCoinSymbol}}) to Buy {{receiveCoinFullName}} ({{receiveCoinSymbol}})",
+    "meta_description": "Best exchange rate for {{depositCoinFullName}} ({{depositCoinSymbol}}) to {{receiveCoinFullName}} ({{receiveCoinSymbol}}). N.exchange provides instant exchange without KYC or Registration."
+  },
+  "PerExchangePairBODY": {
+    "H1": "{{depositCoinFullName}} ({{depositCoinSymbol}}) to {{receiveCoinFullName}} ({{receiveCoinSymbol}}) Instant Exchange"
+  },
   "keyfeatures": {
     "title": "Key Features of Instant Exchange",
     "BELOW ITEMS ARE TODO": "Delete this item",
@@ -482,6 +489,8 @@
       "hourprice": "{{value, big usd}}"
     },
     "faq": {
+      "notfound": "Not found",
+      "openticket":"Open support ticket",
       "questions": {
         "what-is-whitelabel": "What is a white-label exchange?",
         "why-whitelabel": "Why should I use a white-label exchange?"

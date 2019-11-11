@@ -1,9 +1,10 @@
-import React from 'react'
-import { Button, Col } from 'reactstrap'
+import React, { useState, useMemo, useCallback } from 'react'
+import { Button } from 'reactstrap'
 import styled from '@emotion/styled'
 import { I18n } from 'react-i18next'
 import ellipse from 'Img/ellipse.svg'
-
+import Support from './Support'
+import YouTube from 'react-youtube'
 
 
 const PageTitle = styled.h1`
@@ -43,21 +44,6 @@ const Iframe = styled.iframe`
   left: 0;
   width: 97%;
   height: 100%;
-`
-
-const videoID = "7ujmzb3HzCA"
-
-const YTPlayer = () => {
-  return (
-  <IframeContainer>
-    <Iframe src={ `https://www.youtube.com/embed/${videoID}` } frameBorder="0" title="Set up your own cryptocurrency exchange" />
-  </IframeContainer>
-  )
-}
-
-// WIP
-const reorder = `
-:nth-child(2) { order: 3 }
 `
 
 const Wrapper = styled.div`
@@ -127,6 +113,20 @@ const StyledButton = styled(Button)`
 `
 
 export default function VideoCard() {
+  const [ showSupportModal, setShowSupportModal ] = useState(false)
+
+  const onContactUs = useCallback(() => {
+    setShowSupportModal(s => !s)
+    window.gtag('event', 'Whitelabel Hero', { event_category: 'interaction', event_label: 'Click Contact Us' })
+  })
+
+  const youtubeOptions = useMemo(() => 
+    ({
+        onPlay: () => { window.gtag('event', 'Whitelabel Video', { event_category: 'interaction', event_label: 'Video Start' }) },
+        onEnd: () => { window.gtag('event', 'Whitelabel Video', { event_category: 'interaction', event_label: 'Video Finished' }) }
+    })
+  , [])
+
   return (
     <I18n ns="translations">
       {t => (
@@ -135,10 +135,13 @@ export default function VideoCard() {
             <PageTitle>{ t('videocard.title') }</PageTitle>
             <Buttons>
               <StyledButton>{ t('videocard.livepreview') }</StyledButton>
-              <StyledButton>{ t('videocard.contactus') }</StyledButton>
+              <StyledButton onClick={ onContactUs }>{ t('videocard.contactus') }</StyledButton>
             </Buttons>
-            <YTPlayer />
+            <IframeContainer>
+              <YouTube videoId="7ujmzb3HzCA" opt={youtubeOptions} />
+            </IframeContainer>
           </GridContainer>
+          <Support show={ showSupportModal } onClose={ () => setShowSupportModal(false) } />
         </Wrapper>
       )}
     </I18n>
