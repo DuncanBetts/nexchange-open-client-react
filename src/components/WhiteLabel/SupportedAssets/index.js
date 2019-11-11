@@ -4,26 +4,30 @@ import SupportedAsset from './SupportedAsset'
 import { Col } from 'reactstrap'
 import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 
+
+const coinImgPath = 'img/cryptocurrency-icons/color'
+
 const coins = [
-  { src: 'img/coins/BCH.png', name: 'BCH' },
-  { src: 'img/coins/BNB.png', name: 'BNB' },
-  { src: 'img/coins/BNT.png', name: 'BNT' },
-  { src: 'img/coins/BTC.png', name: 'BTC' },
-  { src: 'img/coins/DOGE.png', name: 'DOGE' },
-  { src: 'img/coins/EOS.png', name: 'EOS' },
-  { src: 'img/coins/ETH.png', name: 'ETH' },
-  { src: 'img/coins/EUR.png', name: 'EUR' },
-  { src: 'img/coins/GBP.png', name: 'GBP' },
-  { src: 'img/coins/KCS.png', name: 'KCS' },
-  { src: 'img/coins/KNC.png', name: 'KNC' },
-  { src: 'img/coins/LTC.png', name: 'LTC' },
-  { src: 'img/coins/NANO.png', name: 'NANO' },
-  { src: 'img/coins/OMG.png', name: 'OMG' },
-  { src: 'img/coins/USD.png', name: 'USD' },
-  { src: 'img/coins/USDT.png', name: 'USDT' },
-  { src: 'img/coins/XMR.png', name: 'XMR' },
-  { src: 'img/coins/XVG.png', name: 'XVG' },
-  { src: 'img/coins/ZEC.png', name: 'ZEC' }
+  { src: `${coinImgPath}/bch.png`, symbol: 'BCH', name: 'Bitcoin Cash' },
+  { src: `${coinImgPath}/bnb.png`, symbol: 'BNB', name: 'Binance Coin' },
+  { src: `${coinImgPath}/bnt.png`, symbol: 'BNT', name: 'Bancor Network Token' },
+  { src: `${coinImgPath}/btc.png`, symbol: 'BTC', name: 'Bitcoin' },
+  { src: `${coinImgPath}/doge.png`, symbol: 'DOGE', name: 'Dogecoin' },
+  { src: `${coinImgPath}/eos.png`, symbol: 'EOS', name: 'EOS' },
+  { src: `${coinImgPath}/eth.png`, symbol: 'ETH', name: 'Ethereum' },
+  { src: `${coinImgPath}/eur.png`, symbol: 'EUR', name: 'Euros' },
+  { src: `${coinImgPath}/gbp.png`, symbol: 'GBP', name: 'Pounds Sterling' },
+  { src: `${coinImgPath}/kcs.png`, symbol: 'KCS', name: 'KuCoin Shares' },
+  { src: `${coinImgPath}/knc.png`, symbol: 'KNC', name: 'Kyber Network' },
+  { src: `${coinImgPath}/ltc.png`, symbol: 'LTC', name: 'Litecoin' },
+  { src: `${coinImgPath}/nano.png`, symbol: 'NANO', name: 'Nano' },
+  { src: `${coinImgPath}/omg.png`, symbol: 'OMG', name: 'OmiseGO' },
+  { src: `${coinImgPath}/xlm.png`, symbol: 'XLM', name: 'Stellar Lumens' },
+  { src: `${coinImgPath}/usd.png`, symbol: 'USD', name: 'US Dollar' },
+  { src: `${coinImgPath}/usdt.png`, symbol: 'USDT', name: 'Tether' },
+  { src: `${coinImgPath}/xmr.png`, symbol: 'XMR', name: 'Monero' },
+  { src: `${coinImgPath}/xvg.png`, symbol: 'XVG', name: 'Verge' },
+  { src: `${coinImgPath}/zec.png`, symbol: 'ZEC', name: 'Zcash' }
 ]
 
 export default function SupportedAssets() {
