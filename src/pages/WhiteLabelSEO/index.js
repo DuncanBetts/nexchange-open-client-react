@@ -10,8 +10,7 @@ import MinorCard from 'Components/WhiteLabel/MinorCard/'
 import FAQ from 'Components/WhiteLabel/FAQ2/'
 import PriceTable from 'Components/WhiteLabel/PriceTable/'
 
-import styles from './styles.css'
-
+import styles from './styles.scss'
 
 
 export default function WhiteLabelSEO() {

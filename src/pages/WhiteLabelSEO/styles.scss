@@ -5,6 +5,11 @@
   @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
     min-height: 100vh;
   }
+  @media(min-width: 1024px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 994px
+  }
 
   @media (min-width: $screen-md-min) {
     background-color: #01031e;
