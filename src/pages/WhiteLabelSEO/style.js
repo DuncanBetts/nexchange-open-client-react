@@ -23,9 +23,9 @@ const SectionSubHeading = styled.h3`
   font-weight: 400;
   font-size: 2.5rem;
   font-family: 'Clan Offc Pro Book';
-  @media(min-width: 750px) {
+  @media(min-width: 1024px) {
     font-size: 3rem;
-    color: #fff;
+    color: #F0F0F0;
   }
   @media(min-width: 1536px) {
     font-size: 2rem;
