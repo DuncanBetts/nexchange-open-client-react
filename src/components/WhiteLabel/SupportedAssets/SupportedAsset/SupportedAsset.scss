@@ -7,7 +7,6 @@
 
 .description {
   font-size: 14px;
-  color: #9c9c9c;
 
   p {
     font-size: 14px;
@@ -32,4 +31,11 @@
   font-size: 18px;
   font-weight: bold;
   color: $black;
+}
+
+.title {
+  padding-top: 6px;
+  @media(min-width: 1024px) {
+  color: #DCDCDC;
+  }
 }

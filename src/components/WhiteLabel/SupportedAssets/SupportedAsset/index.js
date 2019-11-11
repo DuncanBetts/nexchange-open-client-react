@@ -5,19 +5,22 @@ import styled from '@emotion/styled'
 
 export default function SupportedAsset({ coin: { name, src } }) {
   return (
-    <StyledCol md={3}>
+    <Item>
       <div className={styles.profile}>
         <img src={src} alt={`${name}`} />
       </div>
       <div className={styles.title}>
         {name}
       </div>
-    </StyledCol >
+    </Item>
   )
 }
 
-const StyledCol = styled(Col)`
+const Item = styled.div`
   height: 230px;
+  @media(min-width: 1024px) {
+    flex: 1 0 20%;
+  }
   .${styles.profile} {
     text-align: center;
     > img {

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
-import { Col } from 'reactstrap'
-import styles from './MinorCard.scss'
-import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
+import styled from '@emotion/styled'
+import { Paragraph, SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 
 
 export default function MinorCard({ topic , text }) {
@@ -10,18 +9,21 @@ export default function MinorCard({ topic , text }) {
   const imgPath = 'http://www.placekitten.com/300/300'
   const imgAltText = { topic }
 
+  const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  `
+
+  const Item = styled(Paragraph)`
+    margin-bottom: 1rem;
+  `
 
   return (
-    <Fragment>
-      <Col md={12}>
+    <Wrapper>
         <SectionHeading>{ topic }</SectionHeading>
-      </Col>
-      <Col md={6}>
-        { text }
-      </Col>
-      <Col md={6}>
+        <Item>{ text }</Item>
         <img src={ imgPath } alt={ imgAltText } />
-      </Col>
-    </Fragment>
+    </Wrapper>
   )
 }

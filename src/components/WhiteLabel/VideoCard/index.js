@@ -44,6 +44,7 @@ const IframeContainer = styled.div`
   }
   @media(min-width: 1024px) {
     grid-column: 3;
+    transform: initial;
   }
 `
 
@@ -118,6 +119,7 @@ const Buttons = styled.div`
   }
   @media(min-width: 1024px) {
     grid-column: 2;
+    align-self: center;
   }
 `
 

@@ -3,6 +3,16 @@ import { I18n } from 'react-i18next'
 import SupportedAsset from './SupportedAsset'
 import { Col } from 'reactstrap'
 import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
+import styled from '@emotion/styled'
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media(min-width: 600px) {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+`
 
 
 const coinImgPath = 'img/cryptocurrency-icons/color'
@@ -27,19 +37,19 @@ const coins = [
   { src: `${coinImgPath}/usdt.png`, symbol: 'USDT', name: 'Tether' },
   { src: `${coinImgPath}/xmr.png`, symbol: 'XMR', name: 'Monero' },
   { src: `${coinImgPath}/xvg.png`, symbol: 'XVG', name: 'Verge' },
-  { src: `${coinImgPath}/zec.png`, symbol: 'ZEC', name: 'Zcash' }
+{ src: `${coinImgPath}/zec.png`, symbol: 'ZEC', name: 'Zcash' }
 ]
 
 export default function SupportedAssets() {
   return (
     <I18n ns="translations">
       {t => (
-        <Fragment>
-          <Col md={12}>
-            <SectionHeading>{t('supportedassets.title')}</SectionHeading>
-          </Col>
+        <>
+          <SectionHeading>{t('supportedassets.title')}</SectionHeading>
+          <Wrapper>
             {coins.map((coin, index) => <SupportedAsset coin={coin} key={`coin-${index}`} />)}
-        </Fragment>
+          </Wrapper>
+        </>
       )}
     </I18n>
   )

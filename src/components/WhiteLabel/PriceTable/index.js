@@ -75,9 +75,11 @@ const tableStyle = `
   }
 
   td, th {
-    padding: 25px 0;
     color: $black;
     background: #fff;
+    @media(min-width: 768px) {
+      padding: 25px 0;
+    }
   }
 
   tbody tr {

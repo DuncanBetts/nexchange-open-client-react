@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
-import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
+import { Paragraph, SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 import { I18n } from 'react-i18next'
 
 
@@ -16,7 +16,9 @@ export default function MajorCard() {
             <SectionHeading>{ t('majorcard.title') }</SectionHeading>
           </Col>
           <Col md={6}>
+            <Paragraph>
             { t('majorcard.text') }
+            </Paragraph>
           </Col>
           <Col md={6}>
             <img src={ imageLocation } alt={ imageAltText } />

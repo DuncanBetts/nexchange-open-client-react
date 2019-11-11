@@ -2,14 +2,13 @@ import styled from '@emotion/styled'
 
 
 const SectionHeading = styled.h2`
-  padding-top: .5rem;
   padding-bottom: .5rem;
   font-weight: 400;
   font-size: 2.75rem;
   font-family: 'Clan Offc Pro Book';
-  @media(min-width: 750px) {
+  @media(min-width: 1024px) {
     font-size: 3.5rem;
-    color: #fff;
+    color: #F0F0F0;
   }
   @media(min-width: 1536px) {
     font-size: 4rem;
@@ -35,4 +34,11 @@ const SectionSubHeading = styled.h3`
     font-size: 2.5rem;
   }
 `
-export { SectionSubHeading, SectionHeading }
+
+const Paragraph = styled.p`
+@media(min-width: 1024px) {
+  color: #DCDCDC;
+}
+`
+
+export { Paragraph, SectionSubHeading, SectionHeading }
