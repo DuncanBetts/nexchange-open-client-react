@@ -15,7 +15,7 @@ function CoinPrices() {
 
   useEffect(() => {
     fetchPairs()
-    }, [displayPairs]
+    }, []
   )
 
   const fetchPairs = () => {
@@ -29,10 +29,12 @@ function CoinPrices() {
           pair => pair.base === base
         )
 
-        const displayPairs = allMatchPairs.filter(
+        const pairs = allMatchPairs.filter(
           pair => popularCoins.includes(pair.quote)
         )
-        setDisplayPairs(displayPairs)
+        if (displayPairs !== pairs) {
+          setDisplayPairs(pairs)
+        }
       })
       .catch(error => {
         console.log(error)
@@ -54,8 +56,8 @@ function CoinPrices() {
     <div className={styles.container}>
       <div className={styles.row}>
         <div className="container">
-          {displayPairs.map(({ name }) => (
-            <CoinPairPrices tradingSymbolPair={name} />
+          {displayPairs.map(({ name, base, quote }) => (
+            <CoinPairPrices tradingSymbolPair={name} base={base} quote={quote} />
           ))}
       </div>
       </div>
