@@ -11,7 +11,7 @@ import CoinPairPrices from './CoinPairPrices/CoinPairPrices';
 function CoinPrices() {
 
   const [ displayPairs, setDisplayPairs ] = useState('')
-  const { tradingSymbolPair } = useParams()
+  const { base } = useParams()
 
   useEffect(() => {
     fetchPairs()
@@ -25,11 +25,8 @@ function CoinPrices() {
     axios
       .get(url)
       .then(({ data: tradingPairs }) => {
-        const [{ base: depositCoin }] = tradingPairs.filter(
-          pair => pair.name === tradingSymbolPair
-        )
         const allMatchPairs = tradingPairs.filter(
-          pair => pair.base === depositCoin
+          pair => pair.base === base
         )
 
         const displayPairs = allMatchPairs.filter(
@@ -52,14 +49,12 @@ function CoinPrices() {
   // )
   // console.log(displayPairsBaseAndQuote)
 
+  console.log(displayPairs)
   return (
     <div className={styles.container}>
       <div className={styles.row}>
         <div className="container">
-          {/* {displayPairs.map(({ name }) => (
-            <a>{name}</a>
-          ))} */}
-          <CoinPairPrices tradingSymbolPair="BTCUSD" />
+        <CoinPairPrices tradingSymbolPair="BTCUSD" />
           <CoinPairPrices tradingSymbolPair="BTCEUR" />
           <CoinPairPrices tradingSymbolPair="BTCETH" />
           <CoinPairPrices tradingSymbolPair="BTCDOGE" />
