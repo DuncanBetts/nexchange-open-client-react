@@ -10,7 +10,7 @@ import KeyFeatures from 'Components/WhiteLabel/KeyFeatures/'
 import MajorCard from 'Components/WhiteLabel/MajorCard/'
 import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
 import MinorCard from 'Components/WhiteLabel/MinorCard/'
-import FAQ from 'Components/WhiteLabel/FAQ2/'
+import FAQ from 'Components/WhiteLabel/FAQ/'
 import PriceTable from 'Components/WhiteLabel/PriceTable/'
 
 import styles from './styles.scss'

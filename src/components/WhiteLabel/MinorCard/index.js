@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import { Paragraph, SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 

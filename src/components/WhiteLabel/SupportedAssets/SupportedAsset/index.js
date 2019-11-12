@@ -1,5 +1,4 @@
 import React from 'react'
-import { Col } from 'reactstrap'
 import styles from './SupportedAsset.scss'
 import styled from '@emotion/styled'
 

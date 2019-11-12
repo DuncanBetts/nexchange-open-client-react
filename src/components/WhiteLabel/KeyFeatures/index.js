@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-import { Col } from 'reactstrap'
+import React from 'react'
 import { SectionHeading } from 'Pages/WhiteLabelSEO/style.js'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
