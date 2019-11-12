@@ -1,22 +1,27 @@
 .name {
-  margin: 15px 0;
-  font-size: 18px;
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
   font-weight: bold;
   color: $black;
 }
 
 .art {
   > img {
-    max-width: 120px;
+    max-width: 12rem;
   }
 }
 
 .description {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #9c9c9c;
 
+  @media(min-width: 1024px) {
+    font-size: 2rem;
+  }
+
   p {
-    font-size: 14px;
+    font-size: 1.4rem;
+
   }
 
   a {

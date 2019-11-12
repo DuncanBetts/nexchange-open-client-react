@@ -26,6 +26,9 @@ const PageTitle = styled.h1`
   @media(min-width: 2048px) {
     font-size: 7rem;
   }
+  @media(min-width: 2560px) {
+    font-size: 9rem;
+  }
 `
 
 const IframeContainer = styled.div`
@@ -50,9 +53,9 @@ const IframeContainer = styled.div`
 
 const Iframe = styled(YouTube)`
   position: absolute;
-  top: 2rem;
+  top: 0;
   left: 0;
-  width: 97%;
+  width: 100%;
   height: 100%;
 `
 

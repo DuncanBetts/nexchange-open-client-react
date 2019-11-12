@@ -24,20 +24,23 @@ const SectionSubHeading = styled.h3`
   font-size: 2.5rem;
   font-family: 'Clan Offc Pro Book';
   @media(min-width: 1024px) {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #F0F0F0;
   }
   @media(min-width: 1536px) {
     font-size: 2rem;
   }
   @media(min-width: 2048px) {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 `
 
 const Paragraph = styled.p`
 @media(min-width: 1024px) {
   color: #DCDCDC;
+}
+@media(min-width: 1920px) {
+  font-size: 2rem;
 }
 `
 
