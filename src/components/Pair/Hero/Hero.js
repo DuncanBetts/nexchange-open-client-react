@@ -12,6 +12,8 @@ import Config from 'Config';
 import urlParams from 'Utils/urlParams';
 import styles from './Hero.scss';
 
+const { COINS } = Config
+
 class Hero extends Component {
   constructor(props){
     super();
@@ -19,6 +21,20 @@ class Hero extends Component {
     this.state = {
       orderBookActive: true,
     };
+  }
+
+  componentDidMount() {
+    const depositCoin = this.props.selectedCoin.deposit
+    const [ depositCoinName ] = COINS
+      .filter( coin => coin.tradingSymbol === depositCoin )
+      .map( coin => coin.name )
+    this.depositCoinName = depositCoinName
+
+    const receiveCoin = this.props.selectedCoin.receive
+    const [ receiveCoinName ] = COINS
+      .filter( coin => coin.tradingSymbol === receiveCoin )
+      .map( coin => coin.name )
+    this.receiveCoinName = receiveCoinName
   }
 
   UNSAFE_componentWillUpdate(nextProps) {
@@ -50,17 +66,17 @@ class Hero extends Component {
             <Helmet>
               <title>
               {t('PerExchangePairHEAD.title', {
-                depositCoinFullName: 'depositCoinFullName',
-                depositCoinSymbol: this.props.selectedCoin.deposit,
-                receiveCoinFullName: 'receiveCoinFullName',
-                receiveCoinSymbol: this.props.selectedCoin.receive
+                depositCoinName: this.depositCoinName,
+                depositCoinTradingSymbol: this.props.selectedCoin.deposit,
+                receiveCoinName: this.receiveCoinName,
+                receiveCoinTradingSymbol: this.props.selectedCoin.receive
               })}
               </title>
               <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
-                depositCoinFullName: 'depositCoinFullName',
-                depositCoinSymbol: this.props.selectedCoin.deposit,
-                receiveCoinFullName: 'receiveCoinFullName',
-                receiveCoinSymbol: this.props.selectedCoin.receive
+                depositName: this.depositCoinName,
+                depositCoinTradingSymbol: this.props.selectedCoin.deposit,
+                receiveCoinName: this.receiveCoinName,
+                receiveCoinTradingSymbol: this.props.selectedCoin.receive
               })}/>
             </Helmet>
             <div className={styles.hero}>
@@ -71,10 +87,10 @@ class Hero extends Component {
                   <div className="col-xs-12">
                     <div className={styles.brand}>
                       <h1>{t('PerExchangePairBODY.H1', {
-                        depositCoinFullName: 'depositCoinFullName',
-                        depositCoinSymbol: this.props.selectedCoin.deposit,
-                        receiveCoinFullName: 'receiveCoinFullName',
-                        receiveCoinSymbol: this.props.selectedCoin.receive
+                        depositCoinName: this.depositCoinName,
+                        depositCoinTradingSymbol: this.props.selectedCoin.deposit,
+                        receiveCoinName: this.receiveCoinName,
+                        receiveCoinTradingSymbol: this.props.selectedCoin.receive
                       })}
                       </h1>
                       <Trans i18nKey="hero.2">

@@ -1,10 +1,10 @@
 {
   "PerExchangePairHEAD": {
-    "title": "Instant Exchange Sell {{depositCoinFullName}} ({{depositCoinSymbol}}) to Buy {{receiveCoinFullName}} ({{receiveCoinSymbol}})",
-    "meta_description": "Best exchange rate for {{depositCoinFullName}} ({{depositCoinSymbol}}) to {{receiveCoinFullName}} ({{receiveCoinSymbol}}). N.exchange provides instant exchange without KYC or Registration."
+    "title": "Instant Exchange Sell {{depositCoinName}} ({{depositCoinTradingSymbol}}) to Buy {{receiveCoinName}} ({{receiveCoinTradingSymbol}})",
+    "meta_description": "Best exchange rate for {{depositCoinName}} ({{depositCoinTradingSymbol}}) to {{receiveCoinName}} ({{receiveCoinTradingSymbol}}). N.exchange provides instant exchange without KYC or Registration."
   },
   "PerExchangePairBODY": {
-    "H1": "{{depositCoinFullName}} ({{depositCoinSymbol}}) to {{receiveCoinFullName}} ({{receiveCoinSymbol}}) Instant Exchange"
+    "H1": "{{depositCoinName}} ({{depositCoinTradingSymbol}}) to {{receiveCoinName}} ({{receiveCoinTradingSymbol}}) Instant Exchange"
   },
   "keyfeatures": {
     "title": "Key Features of Instant Exchange",

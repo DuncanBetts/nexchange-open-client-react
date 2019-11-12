@@ -57,6 +57,7 @@ class Hero extends Component {
                       <h2>
                         Simple. <span className="text-green">Secure</span>. Transparent.
                       </h2>
+                      <span />
                     </Trans>
                   </div>
                 </div>

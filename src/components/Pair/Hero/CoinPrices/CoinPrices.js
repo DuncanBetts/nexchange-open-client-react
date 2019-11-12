@@ -51,7 +51,6 @@ function CoinPrices() {
   // )
   // console.log(displayPairsBaseAndQuote)
 
-  console.log(displayPairs)
   return (
     <div className={styles.container}>
       <div className={styles.row}>

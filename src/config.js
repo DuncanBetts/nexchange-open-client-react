@@ -13,7 +13,39 @@ const config = {
   KYC_DETAILS_FETCH_INTERVAL: 20000,
   ADVANCED_MODE_ENABLED: true,
   GRAPHCMS_API: 'https://api-euwest.graphcms.com/v1/ck2olkts50bo501i0h3ej7d1f/master',
-  POPULAR_COINS: ["BTC", "BCH", "ETH", "USD", "USDT", "EUR", "LTC", "XLM", "XRP"]
+  POPULAR_COINS: ["BTC", "BCH", "ETH", "USD", "USDT", "EUR", "LTC", "XLM", "XRP"],
+  COINS: [
+    { tradingSymbol: "BCH",  fullName: "Bitcoin Cash", name: "Bitcoin Cash" },
+    { tradingSymbol: "BDG", fullName: "BitDegree", name: "BitDegree" },
+    { tradingSymbol: "BIX", fullName: "Bibox", name: "Bibox" },
+    { tradingSymbol: "BNB", fullName: "Binance", name: "Binance" },
+    { tradingSymbol: "BNT", fullName: "Bancor" , name: "Bancor" },
+    { tradingSymbol: "BTC", fullName: "Bitcoin", name: "Bitcoin" },
+    { tradingSymbol: "COB", fullName: "Cobinhood", name: "Cobinhood" },
+    { tradingSymbol: "COSS", fullName: "COSS" , name: "COSS" },
+    { tradingSymbol: "DASH", fullName: "Dash" , name: "Dash" },
+    { tradingSymbol: "DOGE", fullName: "Dogecoin" , name: "Doge" },
+    { tradingSymbol: "EOS", fullName: "EOS" , name: "EOS" },
+    { tradingSymbol: "ETH", fullName: "Ethereum", name: "Ethereum" },
+    { tradingSymbol: "EUR", fullName: "Euros", name: "Euros" },
+    { tradingSymbol: "GBP", fullName: "Pounds Sterling", name: "Pounds" },
+    { tradingSymbol: "GNT", fullName: "Golem", name: "Golem" },
+    { tradingSymbol: "HT", fullName: "Huobi Token", name: "Huobi" },
+    { tradingSymbol: "JPY", fullName: "Japanese Yen", name: "Yen" },
+    { tradingSymbol: "KCS", fullName: "KuCoin Shares", name: "KuCoin" },
+    { tradingSymbol: "KNC", fullName: "KyberNetwork", name: "KyberNetwork" },
+    { tradingSymbol: "LTC", fullName: "Litecoin", name: "Litecoin" },
+    { tradingSymbol: "NANO", fullName: "Nano", name: "Nano" },
+    { tradingSymbol: "OMG", fullName: "OmiseGo", name: "OmiseGo" },
+    { tradingSymbol: "QTM", fullName: "Qtum", name: "Qtum" },
+    { tradingSymbol: "USD", fullName: "US Dollars", name: "Dollars" },
+    { tradingSymbol: "USDT", fullName: "Tether", name: "Tether" },
+    { tradingSymbol: "XLM", fullName: "Stellar Lumens", name: "Lumens" },
+    { tradingSymbol: "XMR", fullName: "Monero", name: "Monero" },
+    { tradingSymbol: "XVG", fullName: "Verge", name: "Verge" },
+    { tradingSymbol: "ZEC", fullName: "ZCash", name: "ZCash" },
+    { tradingSymbol: "ZNS", fullName: "Renos", name: "Renos" }
+  ]
 };
 
 export default config;
