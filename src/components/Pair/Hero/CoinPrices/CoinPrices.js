@@ -10,7 +10,7 @@ import CoinPairPrices from './CoinPairPrices/CoinPairPrices';
 
 function CoinPrices() {
 
-  const [ displayPairs, setDisplayPairs ] = useState('')
+  const [ displayPairs, setDisplayPairs ] = useState([])
   const { base } = useParams()
 
   useEffect(() => {
@@ -54,16 +54,10 @@ function CoinPrices() {
     <div className={styles.container}>
       <div className={styles.row}>
         <div className="container">
-        <CoinPairPrices tradingSymbolPair="BTCUSD" />
-          <CoinPairPrices tradingSymbolPair="BTCEUR" />
-          <CoinPairPrices tradingSymbolPair="BTCETH" />
-          <CoinPairPrices tradingSymbolPair="BTCDOGE" />
-          <CoinPairPrices tradingSymbolPair="BTCLTC" />
-          <CoinPairPrices tradingSymbolPair="BTCBCH" />
-          <CoinPairPrices tradingSymbolPair="BTCXVG" />
-          <CoinPairPrices tradingSymbolPair="BTCXRP" />
-          <CoinPairPrices tradingSymbolPair="BTCXLM" />
-        </div>
+          {displayPairs.map(({ name }) => (
+            <CoinPairPrices tradingSymbolPair={name} />
+          ))}
+      </div>
       </div>
     </div>
     )
