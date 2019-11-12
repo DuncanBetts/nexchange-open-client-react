@@ -1,10 +1,10 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { Button } from 'reactstrap'
 import styled from '@emotion/styled'
 import { I18n } from 'react-i18next'
 import ellipse from 'Img/ellipse.svg'
 import Support from './Support'
 import YouTube from 'react-youtube'
+import { Form } from 'reactstrap'
 
 
 const PageTitle = styled.h1`
@@ -123,8 +123,47 @@ const Buttons = styled.div`
   }
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled.button`
   margin: 1rem;
+  -webkit-appearance: button;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #044264;
+  border-radius: 4px;
+  border: none;
+  display: inline-block;
+  font-family: 'Clan Offc Pro Medium';
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.33333;
+  margin: 8px 8px;
+  padding: 8px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  :hover {
+    background-color: #033855;
+  }
+  @media(min-width: 365px) {
+    margin: 10px 10px;
+  }
+  @media(min-width: 750px) {
+    padding: 12px 30px;
+    border-radius: 4px;
+    margin: 12px 12px;
+    font-size: 16px;
+  }
+  @media(min-width: 1536px) {
+    padding: 14px 36px;
+    border-radius: 5px;
+    margin: 16px 16px;
+    font-size: 18px;
+  }
 `
 
 export default function VideoCard() {
@@ -142,6 +181,8 @@ export default function VideoCard() {
     })
   , [])
 
+  const livePreviewURL = 'https://n.exchange'
+
   return (
     <I18n ns="translations">
       {t => (
@@ -149,7 +190,9 @@ export default function VideoCard() {
           <GridContainer>
             <PageTitle>{ t('videocard.title') }</PageTitle>
             <Buttons>
-              <StyledButton>{ t('videocard.livepreview') }</StyledButton>
+              <Form action={ livePreviewURL }>
+              <StyledButton type="submit">{ t('videocard.livepreview') }</StyledButton>
+              </Form> 
               <StyledButton onClick={ onContactUs }>{ t('videocard.contactus') }</StyledButton>
             </Buttons>
             <IframeContainer>
