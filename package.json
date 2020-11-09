@@ -92,7 +92,7 @@
     "@storybook/addon-links": "^5.0.8",
     "@storybook/addons": "^3.4.12",
     "@storybook/react": "^5.0.8",
-    "axios-mock-adapter": "^1.15.0",
+    "axios-mock-adapter": "^1.19.0",
     "cypress": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-localstorage-mock": "^2.2.0",
